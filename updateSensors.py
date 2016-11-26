@@ -20,4 +20,4 @@ print 'Amb Temp: ', bmp.read_temperature()
 print 'Pressure: ', bmp.read_pressure()
 
 conn.execute("INSERT INTO sensors(irtemp,dietemp,voltage,ambtemp,pressure) VALUES(%s,%s,%s,%s,%s);",(float(tmp.readObjTempC()),float(tmp.readDieTempC()),float(tmp.readVoltage()),float(bmp.read_temperature()),float(bmp.read_pressure())))
-db.commit()
+conn.commit()
