@@ -9,7 +9,6 @@ from BMP085 import BMP085
 from TMP007 import TMP007
 import _mysql
 
-con = _mysql.connect(host='localhost', user='pi', passwd='raspberry', db='bbox')
-cur = con.cursor()
+db = _mysql.connect(host='localhost', user='pi', passwd='raspberry', db='bbox')
 
 cur.execute("INSERT INTO sensors(irtemp,dietemp,voltage,ambtemp,pressure) VALUES(%s,%s,%s,%s,%s)",(float(tmp.readObjTempC()),float(tmp.readDieTempC()),float(tmp.readVoltage()),float(bmp.read_temperature()),float(bmp.read_pressure()),float(bmp.read_altitude())))
