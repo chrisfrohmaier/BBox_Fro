@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <script type="text/javascript" src="d3/d3.min.js"></script>
+   </head>
+   <body>
+     <p>Hello!</p>
+   </body>
+ </html>
+
+
+d3.json("temperature.php", function(error, data) {
+    data.forEach(function(d) {
+        d.date = parseDate(d.date);
+        d.close = +d.close;
+    });
