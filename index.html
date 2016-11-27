@@ -9,7 +9,7 @@
  </html>
 
 
-var format = d3.time.format('%YYYY-%m-%d %H:%M:%S').parse;
+var format = d3.time.format('%YYYY-%mm-%dd %HH:%MM:%SS').parse;
 
 d3.json("temperature.php", function(error, data) {
     data.forEach(function(d) {
