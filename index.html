@@ -9,8 +9,10 @@
  </html>
 
 
+var format = d3.time.format('%YYYY-%m-%d %H:%M:%S').parse;
+
 d3.json("temperature.php", function(error, data) {
     data.forEach(function(d) {
-        d.date = parseDate(d.date);
+        d.timestamp = format(d.timestamp);
         d.close = +d.close;
-    });
+    }));
